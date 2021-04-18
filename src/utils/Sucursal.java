@@ -89,7 +89,7 @@ public class Sucursal {
     Postre resultado = null;
 
     for (Postre postre : this.postres) {
-      if (postre.getId().equals(nombre.toLowerCase())) {
+      if (postre.getId().equals(ID)) {
         resultado = postre;
         break;
       }
@@ -108,10 +108,20 @@ public class Sucursal {
       }
     }
 
+		System.out.println("**********************************************************");
     System.out.println("Fecha\tPostreID\tNombre de postre\tCantidad\tPrecio Unidad\tTotal");
     for (Pedido pedido : pedidosFecha) {
-      System.out.println(pedido.getFecha() + "\t" + pedido.getPostreID() + "\t");
+			Postre postrePedido = this.buscarPostrePorID(pedido.getPostreID());
+
+      System.out.println(pedido.getFecha() + "\t"+ 
+			pedido.getPostreID() + "\t"+
+			postrePedido.getNombre() + "\t\t"+
+			pedido.getCantidad() + "\t"+
+			postrePedido.getPrecioUnidad()+"\t"+
+			(postrePedido.getPrecioUnidad()*pedido.getCantidad())
+			);
     }
+		System.out.println("**********************************************************");
   }
 
   public Insumo buscarInsumoPorNombre(String nombre) {

@@ -33,7 +33,7 @@ public class Main{
     buttercupNY.realizarPedido("Carlos", "Roland", "Mario", "Pastel3Leches" , 5, "15-04-21");
     buttercupNY.realizarPedido("Alejandra", "Roland", "Mario", "PieManzana" , 4, "16-04-21");
     //informe diario
-    //buttercupNY.generarInformeDia(fecha);
+    buttercupNY.generarInformeDia("14-04-21");
     
     Sucursal buttercupTGU = buttercup.buscarSucursal("ButtercupTGU");
     //Insumos segunda sucursal
